@@ -10,8 +10,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>My Template</title>
-    <meta name="description" content="A Template for my Back-End Projects">
+    <title>Timestamp Microservice</title>
+    <meta name="description" content="A Timestamp Microservice Application">
     <link id="favicon" rel="icon" href="https://glitch.com/edit/favicon-app.ico" type="image/x-icon">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -22,7 +22,34 @@
   </head>
   <body>
     <div class ="container-fluid">
-        <div id="application"></div>
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3 text-center" id="instructions">
+            <h1>Timestamp Microservice</h1>
+            <h3>User Stories</h3>
+            <ol class="list-group">
+                <li class="list-group-item">I can pass a string as a parameter, and it will check to see whether that string contains either a unix timestamp or a natural language date (example: January 1, 2016).</li>
+                <li class="list-group-item">If it does, it returns both the Unix timestamp and the natural language form of that date.</li>
+                <li class="list-group-item">If it does not contain a date or Unix timestamp, it returns null for those properties.</li>
+            </ol>
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h3 class="panel-title"><strong>Example Input</strong></h3>
+                </div>
+                <div class="panel-body">
+                <p><strong>https://timestamp-micro-serv.glitch.me/september%2022,2017</strong></p>
+                <p><strong>https://timestamp-micro-serv.glitch.me/1506052800000</strong></p>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h3 class="panel-title"><strong>Example Output</strong></h3>
+                </div>
+                <div class="panel-body">
+                <p><strong>{"unix":"1506052800000","natural":"Fri Sep 22 2017"}</strong></p>
+                </div>
+              </div>
+          </div>
+        </div>
         <div class="row">
           <div class="col-md-12 text-center" id="info">
             Coded by <a href="https://www.freecodecamp.com/dereje1" target="_blank">DGetahun</a>
