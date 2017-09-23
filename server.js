@@ -17,9 +17,9 @@ app.get("/:dateVal", function (req, res) {
 
   //if user param is already a number just use number otherwise parse with builtin function
   parsedDateUnix = Number(req.params.dateVal) ? Number(req.params.dateVal) : Date.parse(req.params.dateVal)
+  let naturalDate = new Date(parsedDateUnix)
 
-  if(parsedDateUnix){//if valid unix date
-    let naturalDate = new Date(parsedDateUnix)
+  if(parsedDateUnix && naturalDate!="Invalid Date"){//if valid unix date & valid parsed date
     returnObject = {"unix":parsedDateUnix.toString(),"natural":naturalDate.toDateString()}
   }
   else{
@@ -29,10 +29,11 @@ app.get("/:dateVal", function (req, res) {
 });
 
 app.get("/", function (req, res) {//got this from glitch , basically serves the index
+  console.log("Anything ?")
   res.sendFile(__dirname + '/views/index.html');
 });
 
 // listen for requests :)
-var listener = app.listen(3000, function () {
+var listener = app.listen(process.env.PORT || 3000, function () {
   console.log('Your app is listening on port ' + listener.address().port);
 });
