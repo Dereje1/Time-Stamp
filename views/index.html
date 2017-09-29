@@ -12,6 +12,7 @@
   <head>
     <title>Timestamp Microservice</title>
     <meta name="description" content="A Timestamp Microservice Application">
+    <link id="favicon" rel="icon" href="#" type="image/x-icon">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -35,8 +36,15 @@
                   <h3 class="panel-title"><strong>Example Input</strong></h3>
                 </div>
                 <div class="panel-body">
-                <p><strong>https://timestamp-micro-serv.glitch.me/september%2022,2017</strong></p>
-                <p><strong>https://timestamp-micro-serv.glitch.me/1506052800000</strong></p>
+                    <form class="form-inline" id="urlSubmitForm">
+                          <label class="mr-sm-3" for="inlineFormCustomSelect">Type or paste String</label>
+                          <input type="text" class="form-control" id="usr">
+                          <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                    <BR>
+                    <h5><strong>OR paste query directly into browser in the format below:</strong></h5>
+                    <p class="usage"><strong>https://timestamp-micro-serv.glitch.me/september%2022,2017</strong></p>
+                    <p class="usage"><strong>https://timestamp-micro-serv.glitch.me/1506052800000</strong></p>
                 </div>
               </div>
               <div class="panel panel-default">
@@ -44,7 +52,7 @@
                   <h3 class="panel-title"><strong>Example Output</strong></h3>
                 </div>
                 <div class="panel-body">
-                <p><strong>{"unix":"1506052800000","natural":"Fri Sep 22 2017"}</strong></p>
+                <p class="usage"><strong>{"unix":"1506052800000","natural":"Fri Sep 22 2017"}</strong></p>
                 </div>
               </div>
           </div>
