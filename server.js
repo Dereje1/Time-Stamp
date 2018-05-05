@@ -24,12 +24,7 @@ app.get("/", function (req, res) {//got this from glitch , basically serves the 
 });
 
 app.use(function (err, req, res, next) {
-  try {
-    decodeURIComponent(req.path);
-  }
-  catch (e) {
-    res.send({"unix":null,"natural":null,"error":e.message})
-  }
+  res.send({"unix":null,"natural":null,"error":err.message})
 })
 // listen for requests :)
 var listener = app.listen(process.env.PORT || 3000, function () {
